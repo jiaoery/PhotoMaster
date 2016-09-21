@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="色调"
+        android:id="@+id/hue"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/imageview"
+        />
+    <SeekBar
+        android:id="@+id/seekbarhue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hue"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="饱和度"
+        android:id="@+id/saturation"
+        android:layout_below="@id/seekbarhue"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <SeekBar
+        android:id="@+id/seekbarsaturation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saturation"
+        android:layout_marginTop="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="亮度"
+        android:id="@+id/lum"
+        android:layout_below="@id/seekbarsaturation"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <SeekBar
+        android:id="@+id/seekbarlum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lum"
+        android:layout_marginTop="15dp"/>
+    
+    
+
+</RelativeLayout>
