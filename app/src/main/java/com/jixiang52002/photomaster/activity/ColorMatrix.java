@@ -99,5 +99,7 @@ public class ColorMatrix extends AppCompatActivity {
 
     public void btnReset(View view){
        intMatriax();
+        getMatrix();
+        setImageMatrix();
     }
 }

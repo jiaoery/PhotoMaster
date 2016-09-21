@@ -28,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ColorMatrix.class);
         startActivity(intent);
     }
+
+    public void btnPiexlsEffect(View view){
+        Intent intent=new Intent(this,PixelsEffect.class);
+        startActivity(intent);
+    }
 }
