@@ -33,4 +33,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,PixelsEffect.class);
         startActivity(intent);
     }
+
+    public void btnMatrix(View view){
+        Intent intent=new Intent(this,ImageMatrixTest.class);
+        startActivity(intent);
+    }
+
+    public void btnXfermodule(View view){
+        Intent intent=new Intent(this,XfermoduleTest.class);
+        startActivity(intent);
+    }
 }

@@ -36,5 +36,20 @@
         android:text="PiexlsEffect"
         android:onClick="btnPiexlsEffect"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Matrix"
+        android:onClick="btnMatrix"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xfermodule"
+        android:onClick="btnXfermodule"
+        />
+
+
 
 </LinearLayout>
