@@ -50,6 +50,23 @@
         android:onClick="btnXfermodule"
         />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="shader"
+        android:onClick="btnShader"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reflect"
+        android:onClick="btnReflect"
+        />
+
+
+
+
 
 
 </LinearLayout>

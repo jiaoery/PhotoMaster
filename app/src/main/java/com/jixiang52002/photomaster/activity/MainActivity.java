@@ -43,4 +43,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,XfermoduleTest.class);
         startActivity(intent);
     }
+
+    public void btnShader(View view){
+        Intent intent=new Intent(this,BitmapShaderTest.class);
+        startActivity(intent);
+    }
+
+    public void btnReflect(View view){
+        Intent intent=new Intent(this,ReflectViewTest.class);
+        startActivity(intent);
+    }
+
 }

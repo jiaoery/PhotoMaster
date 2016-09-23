@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jixiang52002.photomaster" >
+    package="com.jixiang52002.photomaster">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/photo_master"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".activity.MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +19,9 @@
         <activity android:name=".activity.ColorMatrix" />
         <activity android:name=".activity.PixelsEffect" />
         <activity android:name=".activity.ImageMatrixTest" />
-        <activity android:name=".activity.XfermoduleTest" >
-        </activity>
+        <activity android:name=".activity.XfermoduleTest" />
+        <activity android:name=".activity.BitmapShaderTest" />
+        <activity android:name=".activity.ReflectViewTest"></activity>
     </application>
 
 </manifest>
