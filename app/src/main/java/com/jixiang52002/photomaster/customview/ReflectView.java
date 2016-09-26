@@ -54,9 +54,8 @@ public class ReflectView extends View {
        mPaint=new Paint();
        //渐变效果
        mPaint.setShader(new LinearGradient(0,mSrcBitmap.getHeight(),0,mSrcBitmap.getHeight()*1.4F
-       , 0XDD000000,0X10000000, Shader.TileMode.CLAMP));
-       mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-
+       , 0XDD000000,0X00FF00, Shader.TileMode.CLAMP));
+       mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
 
     }
     @Override

@@ -54,4 +54,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void btnMeshView(View view){
+        Intent intent=new Intent(this,MeshViewTest.class);
+        startActivity(intent);
+    }
+
 }

@@ -21,7 +21,8 @@
         <activity android:name=".activity.ImageMatrixTest" />
         <activity android:name=".activity.XfermoduleTest" />
         <activity android:name=".activity.BitmapShaderTest" />
-        <activity android:name=".activity.ReflectViewTest"></activity>
+        <activity android:name=".activity.ReflectViewTest" />
+        <activity android:name=".activity.MeshViewTest"></activity>
     </application>
 
 </manifest>
