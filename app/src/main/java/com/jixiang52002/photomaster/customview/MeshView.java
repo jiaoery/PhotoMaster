@@ -24,6 +24,8 @@ public class MeshView  extends View {
     //原始的数组坐标
     private float[] origs=new float[COUNT*2];
 
+    private float K=1f;
+
     private Bitmap mBitmap;
     public MeshView(Context context) {
         super(context);
@@ -44,7 +46,7 @@ public class MeshView  extends View {
 
     private void initView() {
         int index=0;
-        mBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test);
+        mBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test1);
         float bmWidth=mBitmap.getWidth();
         float bmHeight=mBitmap.getHeight();
         //初始化像素点
@@ -65,11 +67,13 @@ public class MeshView  extends View {
             for (int j = 0; j <WIDTH+1 ; j++) {
                 verts[(i*(WIDTH+1)+j)*+0]+=0;
                 //正弦函数分布
-                float offsetY=(float) Math.sin((float)j/WIDTH*2*Math.PI);
+                float offsetY=(float) Math.sin((float)j/WIDTH*2*Math.PI+K);
                 verts[(i*(WIDTH+1)+j)*2+1]=origs[(i*(WIDTH+1)+j)*2+1]+offsetY*50;
 
             }
         }
+        K+=0.1F;
        canvas.drawBitmapMesh(mBitmap,WIDTH,HEIGHT,verts,0,null,0,null);
+        invalidate();
     }
 }
