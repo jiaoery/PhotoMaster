@@ -27,41 +27,49 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //矩阵变换实现图像处理
     public void btnColorMatrix(View view){
         Intent intent=new Intent(this,ColorMatrix.class);
         startActivity(intent);
     }
 
+    //像素点阵实现图像处理
     public void btnPiexlsEffect(View view){
         Intent intent=new Intent(this,PixelsEffect.class);
         startActivity(intent);
     }
 
+    //通过基本矩阵实现四种效果
     public void btnMatrix(View view){
         Intent intent=new Intent(this,ImageMatrixTest.class);
         startActivity(intent);
     }
 
+    //Paint 的xformodule方式实现圆角图片
     public void btnXfermodule(View view){
         Intent intent=new Intent(this,XfermoduleTest.class);
         startActivity(intent);
     }
 
+    //Paint 的shader方式实现圆角图片
     public void btnShader(View view){
         Intent intent=new Intent(this,BitmapShaderTest.class);
         startActivity(intent);
     }
 
+    //实现倒影效果和背景效果
     public void btnReflect(View view){
         Intent intent=new Intent(this,ReflectViewTest.class);
         startActivity(intent);
     }
 
+    //以数学函数的方式实现一个动态的效果图
     public void btnMeshView(View view){
         Intent intent=new Intent(this,MeshViewTest.class);
         startActivity(intent);
     }
 
+    //sharedSdk效果
     public void btnShareSdk(View view){
          showShare();
     }

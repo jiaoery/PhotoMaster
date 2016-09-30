@@ -12,6 +12,7 @@ import com.jixiang52002.photomaster.utils.ImageUtils;
 
 /**
  * Created by jixiang52002 on 2016/9/18.
+ * RGBA色光三原色实现图片效果的处理
  */
 public class PrimaryColor extends Activity implements SeekBar.OnSeekBarChangeListener{
 
@@ -33,7 +34,11 @@ public class PrimaryColor extends Activity implements SeekBar.OnSeekBarChangeLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.primary_color);
-        bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.test3);
+        initView();
+    }
+
+    private void initView() {
+        bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test3);
         mImageview= (ImageView) findViewById(R.id.imageview);
         hueSeekBar= (SeekBar) findViewById(R.id.seekbarhue);
         saturationSeekBar= (SeekBar) findViewById(R.id.seekbarsaturation);
@@ -50,6 +55,8 @@ public class PrimaryColor extends Activity implements SeekBar.OnSeekBarChangeLis
         mImageview.setImageBitmap(bitmap);
     }
 
+
+    //三原色的数值发生改变
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
@@ -64,6 +71,7 @@ public class PrimaryColor extends Activity implements SeekBar.OnSeekBarChangeLis
                 mLum=progress*1.0f/MID_VALUE;
                 break;
         }
+        //产生效果
         mImageview.setImageBitmap(ImageUtils.handleImageEffect(bitmap,mHue,mSaturation,mLum));
     }
 
