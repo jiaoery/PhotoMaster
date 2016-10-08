@@ -44,7 +44,16 @@ public class ReflectView extends View {
         initView();
     }
 
+
+    public void  setImageBitmap(Bitmap bitmap){
+        mSrcBitmap=bitmap;
+        initView();
+        invalidate();
+
+    }
+
    private void initView(){
+       if(mSrcBitmap==null)
        mSrcBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test);
        Matrix matrix=new Matrix();
        //实现镜像效果

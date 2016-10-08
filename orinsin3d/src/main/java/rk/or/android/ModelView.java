@@ -7,6 +7,9 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.Window;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  * Activity for model view in 3D 
  */
@@ -37,7 +40,7 @@ public class ModelView extends Activity {
     String modelName = getIntent().getStringExtra("model");
     if (modelName == null)
     	modelName ="cocotte.txt";
-    commands.command("read "+modelName); 
+    commands.command("read "+modelName);
   }
   @Override
   protected void onResume() {

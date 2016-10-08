@@ -1,5 +1,6 @@
 package com.jixiang52002.photomaster.activity;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -15,7 +16,7 @@ import android.widget.ImageView;
 
 import com.jixiang52002.photomaster.R;
 
-public class ColorMatrix extends AppCompatActivity {
+public class ColorMatrix extends Activity {
 
     private ImageView mImageview;
 
@@ -31,7 +32,14 @@ public class ColorMatrix extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_matrix);
-        bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.test1);
+        String filePath=getIntent().getStringExtra("file");
+        if(filePath!=null){
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一
+            bitmap=BitmapFactory.decodeFile(filePath,options);
+        }else{
+            bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test1);
+        }
         mImageview= (ImageView) findViewById(R.id.imageview);
         mImageview.setImageBitmap(bitmap);
         mGridlayout= (GridLayout) findViewById(R.id.gridlayout);

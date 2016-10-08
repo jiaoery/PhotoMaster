@@ -40,6 +40,11 @@ public class ImageMatrixView extends View {
         setImageMatrix(new Matrix());
     }
 
+    public void setImageBitmap(Bitmap bitmap){
+        mBitmap=bitmap;
+        invalidate();
+    }
+
 
     public void setImageMatrix(Matrix matrix){
         mMatrix=matrix;

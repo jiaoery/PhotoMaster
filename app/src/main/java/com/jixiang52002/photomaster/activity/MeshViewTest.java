@@ -1,11 +1,12 @@
 package com.jixiang52002.photomaster.activity;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jixiang52002.photomaster.R;
 
-public class MeshViewTest extends AppCompatActivity {
+public class MeshViewTest extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

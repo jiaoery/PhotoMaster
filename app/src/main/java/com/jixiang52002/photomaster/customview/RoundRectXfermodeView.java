@@ -41,9 +41,17 @@ public class RoundRectXfermodeView extends View {
 //        super(context, attrs, defStyleAttr, defStyleRes);
 //    }
 
+    public void setImageBitmap(Bitmap bitmap){
+        mBitmap=bitmap;
+        initView();
+        invalidate();
+    }
+
+
     private void initView(){
         //关闭硬件加速，防止xformadule无法生效
         setLayerType(LAYER_TYPE_SOFTWARE,null);
+        if(mBitmap==null)
         mBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test1);
         mOut=Bitmap.createBitmap(mBitmap.getWidth(),mBitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas=new Canvas(mOut);
@@ -57,6 +65,9 @@ public class RoundRectXfermodeView extends View {
         canvas.drawBitmap(mBitmap,0,0,mPaint);
         mPaint.setXfermode(null);
     }
+
+
+
 
     @Override
     protected void onDraw(Canvas canvas) {

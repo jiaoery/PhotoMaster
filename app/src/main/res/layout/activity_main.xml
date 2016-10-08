@@ -9,76 +9,121 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/main_backgroud"
     tools:context=".activity.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="美图大师"
+        android:text="@string/app_name"
         android:textSize="40sp"
-        android:layout_marginBottom="40sp"/>
+        android:layout_marginBottom="20sp"/>
 
-    <Button
+    <ImageView
+        android:id="@id/imageview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PrimaryColor"
-        android:onClick="btnPrimaryColor"/>
+        android:layout_height="200dp"
+        android:src="@drawable/test1"/>
 
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="colorMatrix"
-        android:onClick="btnColorMatrix"/>
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
 
-    <Button
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/camera"
+            android:background="@drawable/camera_03"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="拍照"
+            android:layout_below="@id/camera"
+            android:textSize="14sp"
+            android:gravity="center"
+            />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/photograph"
+            android:background="@drawable/camera_06"
+            android:layout_toRightOf="@id/camera"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="相册"
+            android:layout_below="@id/photograph"
+            android:layout_toRightOf="@id/camera"
+            android:textSize="14sp"
+            android:gravity="center"
+            />
+
+        <ImageButton
+            android:id="@+id/share"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/share1"
+            android:layout_toRightOf="@id/photograph"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+           />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="分享"
+            android:layout_below="@id/camera"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_toRightOf="@id/photograph"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageButton
+            android:id="@+id/save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/save"
+            android:layout_toRightOf="@id/share"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="保存"
+            android:layout_below="@id/camera"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_toRightOf="@id/share"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+
+    <GridView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PiexlsEffect"
-        android:onClick="btnPiexlsEffect"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Matrix"
-        android:onClick="btnMatrix"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Xfermodule"
-        android:onClick="btnXfermodule"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="shader"
-        android:onClick="btnShader"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="reflect"
-        android:onClick="btnReflect"
-        />
+        android:layout_height="match_parent"
+        android:numColumns="4"
+        android:id="@+id/function"
+        android:layout_marginTop="10dp"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"/>
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="meshview"
-        android:onClick="btnMeshView"
-        />
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="shareSdk"
-        android:onClick="btnShareSdk"
-        />
 
 
 

@@ -38,7 +38,14 @@ public class PrimaryColor extends Activity implements SeekBar.OnSeekBarChangeLis
     }
 
     private void initView() {
-        bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test3);
+        String filePath=getIntent().getStringExtra("file");
+        if(filePath!=null){
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一
+            bitmap=BitmapFactory.decodeFile(filePath,options);
+        }else{
+            bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.test3);
+        }
         mImageview= (ImageView) findViewById(R.id.imageview);
         hueSeekBar= (SeekBar) findViewById(R.id.seekbarhue);
         saturationSeekBar= (SeekBar) findViewById(R.id.seekbarsaturation);

@@ -11,6 +11,7 @@
     tools:context=".activity.XfermoduleTest">
 
     <com.jixiang52002.photomaster.customview.RoundRectXfermodeView
+        android:id="@+id/view"
         android:layout_width="300dp"
         android:layout_height="300dp" />
 
