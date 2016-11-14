@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.jixiang52002.photomaster.R;
 
@@ -19,9 +20,9 @@ import rk.or.android.ModelSelection;
 import rk.or.android.ModelView;
 import rk.or.android.View3D;
 
-public class LaucherActivity extends ModelView{
+public class LaucherActivity extends Activity{
 
-
+    private ImageView imageView;
     public  static int MESSAGE_WHAT=1;
     TimerTask timerTask=new TimerTask() {
         @Override
@@ -33,13 +34,9 @@ public class LaucherActivity extends ModelView{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (View3D.front == 0) {
-            View3D.texturesON = true;
-            View3D.front = wuziqi.jixiang.com.orinsin3d.R.drawable.gally400x572;
-//    		View3D.back = R.drawable.blue32x32;
-            View3D.back = wuziqi.jixiang.com.orinsin3d.R.drawable.sunako400x572;
-            View3D.background = R.drawable.guide;
-        }
+        setContentView(R.layout.activity_laucher);
+        imageView= (ImageView) findViewById(R.id.image);
+        imageView.setBackgroundResource(R.drawable.laucher);
         timer=new Timer(true);
         timer.schedule(timerTask,5000,5000);
 

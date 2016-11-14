@@ -39,11 +39,18 @@ public class BitmapShaderView extends View {
 //    }
 
 
+    public void setImageBitmap(Bitmap bitmap){
+        mBitmap=bitmap;
+        //重绘图像
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
+        if(mBitmap==null)
         mBitmap= BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         mParint=new Paint(Paint.ANTI_ALIAS_FLAG);
-        bitmapShader=new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        bitmapShader=new BitmapShader(mBitmap, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
         mParint.setShader(bitmapShader);
         canvas.drawCircle(300,200,300,mParint);
     }
