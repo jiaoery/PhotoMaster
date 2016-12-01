@@ -24,21 +24,19 @@ public class LaucherActivity extends Activity{
 
     private ImageView imageView;
     public  static int MESSAGE_WHAT=1;
-    TimerTask timerTask=new TimerTask() {
-        @Override
-        public void run() {
-            handler.sendEmptyMessage(MESSAGE_WHAT);
-        }
-    };
-    Timer timer;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laucher);
         imageView= (ImageView) findViewById(R.id.image);
         imageView.setBackgroundResource(R.drawable.laucher);
-        timer=new Timer(true);
-        timer.schedule(timerTask,5000,5000);
+        //3s 后执行任务
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(1);
+            }
+        },3000);
 
     }
 
@@ -47,7 +45,6 @@ public class LaucherActivity extends Activity{
         public void handleMessage(Message msg) {
             switch (msg.what){
                 case 1:
-                    timer.cancel();
                     Intent intent=new Intent(LaucherActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
