@@ -16,6 +16,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.jixiang52002.photomaster.R;
 import com.jixiang52002.photomaster.adapter.FunctionAdapter;
 import com.jixiang52002.photomaster.adapter.FunctionItem;
+import com.jixiang52002.photomaster.config.Constacts;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,14 +40,8 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class MainActivity extends Activity{
 
-    private ImageView imageView;
-    private Bitmap bitmap;
-    //按钮
-    private ImageButton camera,photograph,share,save;
-    //功能列表
-    private GridView functions;
-
-    private List<FunctionItem> mList;
+    //美化图片，拍照
+   public Button makePhoto,camera;
 
     public static final int REQ_1=1;
 
@@ -53,31 +49,43 @@ public class MainActivity extends Activity{
 
     public static final int REQ_3=3;
 
-    String filePath;
+    //图片的保存地址
+    String filePath=Environment.getExternalStorageDirectory().getPath()+"/temp.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        initView();
-//        initFunction();
+        initView();
     }
 
-//    //初始化界面程序
-//    private void initView() {
-//        imageView= (ImageView) findViewById(R.id.imageview);
-//        camera= (ImageButton) findViewById(R.id.camera);
-//        photograph= (ImageButton) findViewById(R.id.photograph);
-//        share= (ImageButton) findViewById(R.id.share);
-//        save= (ImageButton) findViewById(R.id.save);
-//        functions= (GridView) findViewById(R.id.function);
-//        camera.setOnClickListener(this);
-//        photograph.setOnClickListener(this);
-//        share.setOnClickListener(this);
-//        save.setOnClickListener(this);
-//
-//    }
-//
+    //初始化界面程序
+    private void initView() {
+        makePhoto= (Button) findViewById(R.id.beatifulphoto);
+        camera= (Button) findViewById(R.id.camera);
+    }
+
+    /**
+     * 打开相机
+     * @param view
+     */
+    public void openCamera(View view){
+        Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Uri uri = Uri.fromFile(new File(filePath));
+        //让拍照的照片放在指定的目录下 uri
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        startActivityForResult(intent,REQ_2);
+    }
+
+    /**
+     * 美化图片
+     * @param view
+     */
+    public void beatifulPhoto(View view){
+        Intent intent=new Intent(this,BeautifyCapture.class);
+        startActivity(intent);
+    }
+
 //    private void initFunction(){
 //        mList=new ArrayList<>();
 //        mList.add(new FunctionItem("RGBA三原色", Color.RED));
@@ -253,36 +261,19 @@ public class MainActivity extends Activity{
 //        }
 //    }
 //
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode == RESULT_OK) {
-//            FileInputStream fis=null;
-//            if (requestCode == REQ_1) {
-//                //通过将拍照后的照片保存在指定的目录下，然后通过io流获取相应的图像数据
-//                try {
-//                    BitmapFactory.Options options = new BitmapFactory.Options();
-//                    options.inSampleSize = 2;//图片宽高都为原来的二分之一，即图片为原来的四分之一
-//                    fis = new FileInputStream(filePath);
-//                    bitmap = BitmapFactory.decodeStream(fis,null,options);
-//                    imageView.setImageBitmap(bitmap);
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                } finally {
-//                    try {
-//                        fis.close();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }else if(requestCode == REQ_2){
-//                filePath=data.getData().getPath();
-//                bitmap=BitmapFactory.decodeFile(filePath);
-//                imageView.setImageBitmap(bitmap);
-//            }
-//        }
-//    }
-//
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if(requestCode == REQ_2){
+                //将拍摄的图片传递到图片美化的Activity
+                Intent intent=new Intent(this,BeautifyCapture.class);
+                intent.putExtra(Constacts.CAPTURE_FILES,filePath);
+                startActivity(intent);
+            }
+        }
+    }
+
 //    //点击事件
 //    @Override
 //    public void onClick(View v) {
