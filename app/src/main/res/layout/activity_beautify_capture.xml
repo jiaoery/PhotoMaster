@@ -2,42 +2,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
 
-    <include layout="@layout/common_share_title"
+    <include
         android:id="@+id/MyLayout_top"
-        />
+        layout="@layout/common_share_title" />
 
     <!-- 底部按钮 -->
     <RelativeLayout
         android:id="@+id/MyLayout_bottom"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_alignParentBottom="true"
         android:background="@color/pink"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true" >
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/layout_watch"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/bottom_color_selector"
-                android:orientation="vertical" >
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/image_watch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:src="@drawable/image_icon_watch_nor" />
+
                 <TextView
                     android:id="@+id/textview_watch"
                     android:layout_width="wrap_content"
@@ -46,20 +49,23 @@
                     android:textColor="#ffffff"
                     android:textSize="10sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layout_increase"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/bottom_color_selector"
-                android:orientation="vertical" >
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/image_increase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:src="@drawable/image_icon_increase_nor" />
+
                 <TextView
                     android:id="@+id/textview_increase"
                     android:layout_width="wrap_content"
@@ -68,20 +74,23 @@
                     android:textColor="#ffffff"
                     android:textSize="10sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layout_effect"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/bottom_color_selector"
-                android:orientation="vertical" >
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/image_effect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:src="@drawable/image_icon_effect_nor" />
+
                 <TextView
                     android:id="@+id/textview_effect"
                     android:layout_width="wrap_content"
@@ -90,6 +99,7 @@
                     android:textColor="#ffffff"
                     android:textSize="10sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layout_frame"
                 android:layout_width="wrap_content"
@@ -97,13 +107,15 @@
                 android:layout_weight="1"
                 android:background="@drawable/bottom_color_selector"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/image_frame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:src="@drawable/image_icon_frame_nor" />
+
                 <TextView
                     android:id="@+id/textview_frame"
                     android:layout_width="wrap_content"
@@ -112,20 +124,23 @@
                     android:textColor="#ffffff"
                     android:textSize="10sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layout_person"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/bottom_color_selector"
-                android:orientation="vertical" >
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/image_person"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:src="@drawable/image_icon_person_nor" />
+
                 <TextView
                     android:id="@+id/textview_person"
                     android:layout_width="wrap_content"
@@ -140,17 +155,19 @@
     <!-- 显示图片 -->
     <RelativeLayout
         android:id="@+id/Content_Layout"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@id/MyLayout_bottom"
         android:layout_below="@id/MyLayout_top"
         android:background="#EFDFDF"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center_horizontal" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"/>
     </RelativeLayout>
 </RelativeLayout>

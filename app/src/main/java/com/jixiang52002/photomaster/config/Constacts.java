@@ -5,6 +5,6 @@ package com.jixiang52002.photomaster.config;
  */
 
 public class Constacts {
-    //图片地址
-    public static String CAPTURE_FILES;
+
+    public static String CAPTURE_FILES;//待处理图片地址
 }
