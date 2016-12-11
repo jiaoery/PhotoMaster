@@ -9,6 +9,8 @@ import com.jixiang52002.photomaster.R;
 
 public class BeautifyCapture extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +24,11 @@ public class BeautifyCapture extends AppCompatActivity {
         //锁定屏幕
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_beautify_capture);
+        initView();
+    }
+
+    //初始化界面
+    private void initView() {
+
     }
 }

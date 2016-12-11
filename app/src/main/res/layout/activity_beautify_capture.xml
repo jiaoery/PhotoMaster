@@ -4,32 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <!-- 顶部路径 -->
-    <RelativeLayout
+
+    <include layout="@layout/common_share_title"
         android:id="@+id/MyLayout_top"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:background="#666666"
-        android:layout_alignParentTop="true"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textColor="#ffffff"
-            android:text="图像处理" />
-    </RelativeLayout>
+        />
 
     <!-- 底部按钮 -->
     <RelativeLayout
         android:id="@+id/MyLayout_bottom"
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/image_toolbar_bg"
+        android:background="@color/pink"
         android:gravity="center">
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,9 +27,10 @@
             <LinearLayout
                 android:id="@+id/layout_watch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/bottom_color_selector"
                 android:orientation="vertical" >
                 <ImageView
                     android:id="@+id/image_watch"
@@ -61,9 +49,10 @@
             <LinearLayout
                 android:id="@+id/layout_increase"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/bottom_color_selector"
                 android:orientation="vertical" >
                 <ImageView
                     android:id="@+id/image_increase"
@@ -82,9 +71,10 @@
             <LinearLayout
                 android:id="@+id/layout_effect"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/bottom_color_selector"
                 android:orientation="vertical" >
                 <ImageView
                     android:id="@+id/image_effect"
@@ -103,8 +93,9 @@
             <LinearLayout
                 android:id="@+id/layout_frame"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/bottom_color_selector"
                 android:gravity="center"
                 android:orientation="vertical" >
                 <ImageView
@@ -124,9 +115,10 @@
             <LinearLayout
                 android:id="@+id/layout_person"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:background="@drawable/bottom_color_selector"
                 android:orientation="vertical" >
                 <ImageView
                     android:id="@+id/image_person"
