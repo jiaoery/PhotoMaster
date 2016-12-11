@@ -82,8 +82,30 @@ public class MainActivity extends Activity{
      * @param view
      */
     public void beatifulPhoto(View view){
-        Intent intent=new Intent(this,BeautifyCapture.class);
-        startActivity(intent);
+        Intent intent=new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,REQ_1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if(requestCode==REQ_1){
+                //选择相册图片
+                if(data!=null){
+                    Uri uri=data.getData();
+                    Intent intent=new Intent(this,BeautifyCapture.class);
+                    intent.putExtra(Constacts.CAPTURE_FILES,uri.getEncodedPath());
+                    startActivity(intent);
+                }
+            }else if(requestCode == REQ_2){
+                //将拍摄的图片传递到图片美化的Activity
+                Intent intent=new Intent(this,BeautifyCapture.class);
+                intent.putExtra(Constacts.CAPTURE_FILES,filePath);
+                startActivity(intent);
+            }
+        }
     }
 
 //    private void initFunction(){
@@ -261,18 +283,7 @@ public class MainActivity extends Activity{
 //        }
 //    }
 //
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if(requestCode == REQ_2){
-                //将拍摄的图片传递到图片美化的Activity
-                Intent intent=new Intent(this,BeautifyCapture.class);
-                intent.putExtra(Constacts.CAPTURE_FILES,filePath);
-                startActivity(intent);
-            }
-        }
-    }
+
 
 //    //点击事件
 //    @Override

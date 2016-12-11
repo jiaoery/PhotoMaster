@@ -2,23 +2,13 @@ package com.jixiang52002.photomaster.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Window;
 import android.widget.ImageView;
 
 import com.jixiang52002.photomaster.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import rk.or.Commands;
-import rk.or.Model;
-import rk.or.android.ModelSelection;
-import rk.or.android.ModelView;
-import rk.or.android.View3D;
 
 public class LaucherActivity extends Activity{
 

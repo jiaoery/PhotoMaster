@@ -1,1 +1,1 @@
-include ':app', ':orinsin3d'
+include ':app'

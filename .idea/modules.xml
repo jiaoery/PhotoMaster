@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PhotoMaster.iml" filepath="$PROJECT_DIR$/PhotoMaster.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/orinsin3d/orinsin3d.iml" filepath="$PROJECT_DIR$/orinsin3d/orinsin3d.iml" />
     </modules>
   </component>
 </project>
