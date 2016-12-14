@@ -18,7 +18,7 @@ public class BaseUtils {
 
 
     //普通打印
-    public static void toast(String str){
+    public static void Toast(String str){
         if(mContext==null){
             throw new RuntimeException("请先调用init()初始化");
         }else{
@@ -27,11 +27,31 @@ public class BaseUtils {
 
     }
 
-    public static void toastLong(String str){
+
+    public static void Toast(int str){
+        if(mContext==null){
+            throw new RuntimeException("请先调用init()初始化");
+        }else{
+            Toast.makeText(mContext,str,Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //长打印
+    public static void ToastLong(String str){
         if(mContext==null){
             throw new RuntimeException("请先调用init()初始化");
         }else{
             Toast.makeText(mContext,str,Toast.LENGTH_LONG).show();
         }
     }
+
+    public static void ToastLong(int str){
+        if(mContext==null){
+            throw new RuntimeException("请先调用init()初始化");
+        }else{
+            Toast.makeText(mContext,str,Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 }
