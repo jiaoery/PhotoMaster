@@ -39,7 +39,7 @@
             android:id="@+id/view_right"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/share1"
+            android:background="@drawable/image_person_3"
             android:layout_marginRight="15dp"
             android:clickable="true"/>
 
