@@ -1,5 +1,7 @@
 package com.jixiang52002.photomaster.utils;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -9,6 +11,8 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by jixiang52002 on 2016/9/18.
@@ -18,8 +22,9 @@ public class ImageUtils {
 
     /**
      * 根据制定的大小设定图片
-     * @param dst 图片的file路径
-     * @param width 更改后图片的宽度px
+     *
+     * @param dst    图片的file路径
+     * @param width  更改后图片的宽度px
      * @param height 更改后图片的高度px
      * @return
      */
@@ -267,9 +272,9 @@ public class ImageUtils {
             g1 = Color.green(color);
             b1 = Color.blue(color);
             //浮雕效果算法
-            r = r-r1+127;
-            g = g-g1+127;
-            b = b-b1+127;
+            r = r - r1 + 127;
+            g = g - g1 + 127;
+            b = b - b1 + 127;
             //防止RGB值越界
             if (r > 255) {
                 r = 255;
@@ -292,6 +297,26 @@ public class ImageUtils {
         bmp.setPixels(newPx, 0, width, 0, 0, width, height);
         return bmp;
 
+    }
+
+    /**
+     *  获取assets中资源并转换为Bitmap
+     * @param context  调用方法的相关内容
+     * @param fileName asset下的文件名
+     * @return
+     */
+    public static Bitmap getImageFromAssets(Context context,String fileName) {
+        //Android中使用assets目录存放资源,它代表应用无法直接访问的原生资源
+        Bitmap imageAssets = null;
+        AssetManager am = context.getResources().getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            imageAssets = BitmapFactory.decodeStream(is);
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageAssets;
     }
 
 
