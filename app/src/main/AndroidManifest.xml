@@ -25,14 +25,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity"></activity>
-        <activity android:name=".activity.PrimaryColor" />
-        <activity android:name=".activity.ColorMatrix" />
-        <activity android:name=".activity.PixelsEffect" />
-        <activity android:name=".activity.ImageMatrixTest" />
-        <activity android:name=".activity.XfermoduleTest" />
-        <activity android:name=".activity.BitmapShaderTest" />
-        <activity android:name=".activity.ReflectViewTest" />
-        <activity android:name=".activity.MeshViewTest" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
