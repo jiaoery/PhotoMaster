@@ -589,6 +589,7 @@ public class BeautifyCapture extends Activity implements View.OnFocusChangeListe
                     titleText.setText("图像处理--浮雕效果");
                     popEffect.dismiss();
                     bitmapAfter = effectProcess.ReliefImage(bitmap);
+                    imagerView.setImageBitmap(bitmapAfter);
                 }
             });
             LinearLayout layoutEffect3 = (LinearLayout) customView.findViewById(R.id.layout_effect_gz);
@@ -598,6 +599,7 @@ public class BeautifyCapture extends Activity implements View.OnFocusChangeListe
                     titleText.setText("图像处理--光照效果");
                     popEffect.dismiss();
                     bitmapAfter = effectProcess.SunshineImage(bitmap);
+                    imagerView.setImageBitmap(bitmapAfter);
                 }
             });
             LinearLayout layoutEffect4 = (LinearLayout) customView.findViewById(R.id.layout_effect_sm);
@@ -607,6 +609,7 @@ public class BeautifyCapture extends Activity implements View.OnFocusChangeListe
                     titleText.setText("图像处理--素描效果");
                     popEffect.dismiss();
                     bitmapAfter = effectProcess.SuMiaoImage(bitmap);
+                    imagerView.setImageBitmap(bitmapAfter);
                 }
             });
             LinearLayout layoutEffect5 = (LinearLayout) customView.findViewById(R.id.layout_effect_rh);

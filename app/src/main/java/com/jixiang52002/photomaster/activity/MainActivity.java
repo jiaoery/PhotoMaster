@@ -140,5 +140,9 @@ public class MainActivity extends Activity {
         }
     }
 
+//    @OnShowRationale({Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+//    void shyWhy(final PermissionRequest request) {
+//        BaseUtils.Toast(request.toString());
+//    }
 
 }
